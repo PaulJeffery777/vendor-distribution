@@ -1,0 +1,22 @@
+{
+  "codeConnect": {
+    "include": [
+      "components/DesignSystem/**/*.{ts,tsx}"
+    ],
+    "exclude": [
+      "node_modules/**",
+      ".next/**",
+      "storybook-static/**",
+      "**/*.test.*",
+      "**/*.spec.*",
+      "**/*.stories.*"
+    ],
+    "parser": "react",
+    "fallback": false,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  }
+} 

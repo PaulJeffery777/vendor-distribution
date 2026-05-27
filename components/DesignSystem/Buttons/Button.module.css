@@ -1,0 +1,5 @@
+/* ADDSButton CSS Module - Only customize what's different from Mantine defaults */
+
+.addsButton--link:hover {
+  text-decoration: underline;
+} 
