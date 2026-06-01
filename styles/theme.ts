@@ -54,14 +54,19 @@ const THEME_CONSTANTS = {
  */
 export const theme: MantineThemeOverride = {
   primaryColor: THEME_CONSTANTS.primaryColor,
-  
+
   colors: {
     ...createMantineColors(),
     blue: createAccessibleBlue(),
   },
-  
+
   // Design system defaults
   defaultRadius: THEME_CONSTANTS.defaultRadius,
   fontFamily: THEME_CONSTANTS.fontFamily,
   fontFamilyMonospace: THEME_CONSTANTS.fontFamilyMonospace,
+
+  // Explicitly pin headings to Inter — prevents any serif fallback from @appdirect/design-tokens
+  headings: {
+    fontFamily: THEME_CONSTANTS.fontFamily,
+  },
 };

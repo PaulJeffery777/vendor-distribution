@@ -1,7 +1,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-inter: "Inter Variable", "Inter", "Aptos", "Segoe UI", sans-serif;
+  /* Inter Variable is loaded by @fontsource-variable/inter — no system-font fallbacks needed */
+  --font-inter: "Inter Variable", "Inter", sans-serif;
   --font-roboto-mono: "Roboto Mono Variable", "Roboto Mono", "SFMono-Regular", "Consolas", monospace;
 }
 
@@ -28,24 +29,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure Inter font takes precedence over Mantine defaults, but exclude monospace components */
-html, body {
+/* ── Inter everywhere ──────────────────────────────────────────────────
+   Apply Inter to html/body and catch-all for every element so no
+   component can inherit a serif or system fallback. The two exceptions
+   (Roboto Mono for code/kbd, and [style*="monospace"] for explicit
+   ff="monospace" Mantine props) are re-applied below.
+   ─────────────────────────────────────────────────────────────────── */
+html, body, * {
   font-family: var(--font-inter), sans-serif !important;
 }
 
-/* Override Mantine's font family specifically for non-monospace components */
-.mantine-Text-root,
-.mantine-Button-root,
-.mantine-InputBase-root,
-.mantine-Combobox-root,
-.mantine-DatePicker-root,
-.mantine-Title-root {
-  font-family: var(--font-inter), sans-serif !important;
-}
-
-/* Ensure monospace components use Roboto Mono */
+/* Re-apply Roboto Mono for code/monospace elements.
+   Mantine's ff="monospace" generates:  style="font-family: var(--mantine-font-family-monospace)"
+   so we match the CSS variable name in the attribute value. */
+code, kbd, pre, samp,
 .mantine-Code-root,
-.mantine-Kbd-root {
+.mantine-Kbd-root,
+[style*="mantine-font-family-monospace"] {
   font-family: var(--font-roboto-mono), monospace !important;
 }
 

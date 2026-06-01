@@ -12,6 +12,8 @@ export interface DSAppShellLayoutProps {
   children: ReactNode;
   /** Application or prototype title shown in the header */
   title?: string;
+  /** Remix icon class for the sidebar title area */
+  titleIcon?: string;
   /** Navigation items for the left sidebar */
   navItems?: NavItem[];
   /** Hide the left navigation to use header-only layout */
@@ -23,6 +25,7 @@ export interface DSAppShellLayoutProps {
 export function AppShellLayout({
   children,
   title,
+  titleIcon,
   navItems = [],
   hideNav = false,
 }: DSAppShellLayoutProps) {
@@ -40,7 +43,7 @@ export function AppShellLayout({
 
       {showNav && (
         <AppShell.Navbar pt={0} pb="md" pl="md" pr={0}>
-          <SidebarNav navItems={navItems} title={title ?? 'Navigation'} />
+          <SidebarNav navItems={navItems} title={title ?? 'Navigation'} titleIcon={titleIcon} />
         </AppShell.Navbar>
       )}
 

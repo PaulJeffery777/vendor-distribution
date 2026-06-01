@@ -30,11 +30,51 @@ interface CustomerRow {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Overview', icon: 'ri-home-4-line', href: '/', active: true, color: 'dark' },
-  { label: 'Customers', icon: 'ri-team-line', href: '/prototype/customers', color: 'dark' },
-  { label: 'Pipeline', icon: 'ri-briefcase-4-line', color: 'dark' },
-  { label: 'Reports', icon: 'ri-bar-chart-box-line', color: 'dark' },
-  { label: 'Settings', icon: 'ri-settings-3-line', color: 'dark' },
+  { label: 'Home', icon: 'ri-home-4-line', href: '/', active: true },
+  {
+    label: 'Operations',
+    icon: 'ri-group-line',
+    children: [
+      { label: 'Users', href: '#' },
+      { label: 'Companies', href: '#' },
+      { label: 'Integration Events', href: '#' },
+    ],
+  },
+  {
+    label: 'Billing',
+    type: 'section-label',
+    children: [
+      { label: 'Orders', href: '#' },
+      { label: 'Subscriptions', href: '#' },
+      { label: 'Revenue', href: '#' },
+      { label: 'Payouts', href: '/prototype/payouts' },
+    ],
+  },
+  {
+    label: 'Products',
+    icon: 'ri-apps-2-line',
+    children: [
+      { label: 'Product Catalog', href: '#' },
+      { label: 'Product Uploader', href: '#' },
+    ],
+  },
+  {
+    label: 'Settings',
+    icon: 'ri-settings-3-line',
+    children: [
+      { label: 'Webhooks', href: '#' },
+      { label: 'Functions', href: '#' },
+    ],
+  },
+  {
+    label: 'Reports',
+    icon: 'ri-bar-chart-box-line',
+    children: [
+      { label: 'Download Reports', href: '#' },
+      { label: 'Manage Scheduled Reports', href: '#' },
+      { label: 'Create Reports', href: '#' },
+    ],
+  },
 ];
 
 const rows: CustomerRow[] = [
@@ -57,7 +97,7 @@ export default function HomePage() {
   const activeCount = rows.filter((row) => row.status === 'Active').length;
 
   return (
-    <AppShellLayout navItems={navItems} title="Revenue Ops">
+    <AppShellLayout navItems={navItems} title="Vendor Portal">
       <Stack gap="lg">
         <Breadcrumb
           items={[
