@@ -110,9 +110,9 @@ function AppSwitcherMenu() {
       </Box>
 
       {/* Sections */}
-      <Stack gap={12} pb={0}>
+      <Stack gap={0} pb={0}>
         {APP_SWITCHER_SECTIONS.map((section, sIdx) => (
-          <Box key={sIdx}>
+          <Box key={sIdx} pt={section.title ? 12 : 0}>
             {section.title && (
               <Box px="md" py={5}>
                 <Text fz={12} fw={500} c="dimmed" style={{ letterSpacing: '0.02em' }}>
@@ -151,7 +151,7 @@ function AppSwitcherMenu() {
 
 // ============================= HEADER BAR =============================
 
-export function HeaderBar({ title = 'Prototype' }: DSHeaderBarProps) {
+export function HeaderBar({ title = 'Acme Software' }: DSHeaderBarProps) {
   const [appSwitcherOpen, setAppSwitcherOpen] = useState(false);
 
   return (

@@ -295,19 +295,12 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: 'Distribution',
-    type: 'section-label',
-    children: [
-      { label: 'Sales Channels', href: '/distribution/sales-channels' },
-    ],
-  },
-  {
     label: 'Billing',
     type: 'section-label',
     children: [
       { label: 'Orders', href: '#' },
       { label: 'Subscriptions', href: '#' },
-      { label: 'Revenue', href: '#' },
+      { label: 'Revenue', href: '/prototype/revenue' },
       { label: 'Payouts', href: '/prototype/payouts', active: true },
     ],
   },
@@ -444,7 +437,8 @@ function FilterKPICard({ label, icon, tone, amount, count, countLabel, active, h
       <Text
         fw={700}
         ff="monospace"
-        style={{ fontSize: 26, color: 'var(--mantine-color-gray-9)', lineHeight: 1.1, marginTop: 4, letterSpacing: '-0.01em' }}
+        fz={34}
+        style={{ color: 'var(--mantine-color-gray-9)', lineHeight: 1.1, marginTop: 4, letterSpacing: '-0.01em' }}
       >
         {fmtUSD(amount)}
       </Text>

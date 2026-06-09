@@ -38,7 +38,7 @@ export function AppShellLayout({
       padding="lg"
     >
       <AppShell.Header style={{ background: APP_DIRECT_NAVY }}>
-        <HeaderBar title={title} />
+        <HeaderBar />
       </AppShell.Header>
 
       {showNav && (
