@@ -3,8 +3,6 @@
 import { useState, useMemo } from 'react';
 import { DatePickerInput } from '@mantine/dates';
 import {
-  AppShellLayout,
-  type NavItem,
   Badge,
   Button,
   ActionIcon,
@@ -280,56 +278,6 @@ function generateStatements(): Statement[] {
 }
 
 const STATEMENTS = generateStatements();
-
-// ============================= NAV ITEMS =============================
-
-const navItems: NavItem[] = [
-  { label: 'Home', icon: 'ri-home-4-line', href: '/' },
-  {
-    label: 'Operations',
-    icon: 'ri-group-line',
-    children: [
-      { label: 'Users', href: '#' },
-      { label: 'Companies', href: '#' },
-      { label: 'Integration Events', href: '#' },
-    ],
-  },
-  {
-    label: 'Billing',
-    type: 'section-label',
-    children: [
-      { label: 'Orders', href: '#' },
-      { label: 'Subscriptions', href: '#' },
-      { label: 'Revenue', href: '/prototype/revenue' },
-      { label: 'Payouts', href: '/prototype/payouts', active: true },
-    ],
-  },
-  {
-    label: 'Products',
-    icon: 'ri-apps-2-line',
-    children: [
-      { label: 'Product Catalog', href: '#' },
-      { label: 'Product Uploader', href: '#' },
-    ],
-  },
-  {
-    label: 'Settings',
-    icon: 'ri-settings-3-line',
-    children: [
-      { label: 'Webhooks', href: '#' },
-      { label: 'Functions', href: '#' },
-    ],
-  },
-  {
-    label: 'Reports',
-    icon: 'ri-bar-chart-box-line',
-    children: [
-      { label: 'Download Reports', href: '#' },
-      { label: 'Manage Scheduled Reports', href: '#' },
-      { label: 'Create Reports', href: '#' },
-    ],
-  },
-];
 
 // ============================= FILTER KPI CARD =============================
 
@@ -1101,7 +1049,7 @@ function CreateInvoiceModal({ statement, onClose, onSubmit }: CreateInvoiceModal
 
 // ============================= MAIN PAGE =============================
 
-function PayoutsPage() {
+export default function PayoutsPage() {
   const initialRange = useMemo((): DateRange => {
     const q = Math.floor(TODAY.getMonth() / 3);
     return {
@@ -1521,15 +1469,5 @@ function PayoutsPage() {
         </Box>
       )}
     </Stack>
-  );
-}
-
-// ============================= ROUTE EXPORT =============================
-
-export default function PayoutsRoute() {
-  return (
-    <AppShellLayout navItems={navItems} title="Vendor Portal">
-      <PayoutsPage />
-    </AppShellLayout>
   );
 }

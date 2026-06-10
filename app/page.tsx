@@ -22,8 +22,6 @@ const navItems: NavItem[] = [
     children: [
       { label: 'Orders', href: '#' },
       { label: 'Subscriptions', href: '#' },
-      { label: 'Revenue', href: '/prototype/revenue' },
-      { label: 'Payouts', href: '/prototype/payouts' },
     ],
   },
   {

@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm run build-storybook",
-  "outputDirectory": "storybook-static",
-  "installCommand": "npm install",
-  "framework": null,
+  "framework": "nextjs",
   "public": false
-} 
+}
