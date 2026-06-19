@@ -65,14 +65,34 @@ a {
 }
 
 /* =================================================================
-   APPDIRECT TOKEN ALIASES
-   Map Mantine semantic vars to AppDirect design tokens so that Mantine
-   system props (c="dimmed", etc.) resolve through the AD token system.
+   APPDIRECT DESIGN TOKEN DEFINITIONS
+   Inline definitions of the AD tokens used across the app so the
+   build is not blocked by the private Artifactory package. Remove
+   these once @appdirect/design-tokens is accessible from Vercel and
+   restore the CSS imports in layout.tsx.
    ================================================================= */
 
 :root[data-mantine-color-scheme='light'],
+:root {
+  --ad-color-text-default:  #212529;
+  --ad-color-text-dimmed:   #868e96;
+  --ad-color-bg-subtle:     #f1f3f5;
+  --ad-color-border-default: #ced4da;
+  --ad-color-border-subtle: #dee2e6;
+  --ad-color-brand-primary: #326FDE;
+  --ad-color-status-error:  #e03131;
+  --mantine-color-dimmed:   #868e96;
+}
+
 :root[data-mantine-color-scheme='dark'] {
-  --mantine-color-dimmed: var(--ad-color-text-dimmed);
+  --ad-color-text-default:  #c1c2c5;
+  --ad-color-text-dimmed:   #909296;
+  --ad-color-bg-subtle:     #2c2e33;
+  --ad-color-border-default: #373a40;
+  --ad-color-border-subtle: #2c2e33;
+  --ad-color-brand-primary: #4c8bf5;
+  --ad-color-status-error:  #ff6b6b;
+  --mantine-color-dimmed:   #909296;
 }
 
 /* =================================================================

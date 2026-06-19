@@ -4,10 +4,6 @@ import type { Metadata } from "next";
 import '@fontsource-variable/inter';
 import '@fontsource-variable/roboto-mono';
 
-// AppDirect design tokens (load before Mantine so AD tokens are available for overrides)
-import '@appdirect/design-tokens/css/foundations.css';
-import '@appdirect/design-tokens/css/mantine.css';
-
 // Mantine CSS imports
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
