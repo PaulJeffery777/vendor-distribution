@@ -240,11 +240,10 @@ function OrdersPage() {
       </Stack>
 
       {/* Stats bar */}
-      <SimpleGrid cols={{ base: 2, sm: 5 }} spacing="md">
+      <SimpleGrid cols={{ base: 2, sm: 4 }} spacing="md">
         <StatCard label="Total Orders" value={stats.total} icon="ri-file-list-3-line" />
         <StatCard label="Unfulfilled" value={stats.unfulfilled} icon="ri-time-line" />
         <StatCard label="Fulfilled" value={stats.fulfilled} icon="ri-checkbox-circle-line" />
-        <StatCard label="Total Revenue" value={formatCurrency(stats.revenue)} icon="ri-money-dollar-circle-line" />
         <StatCard label="Avg. Order Value" value={formatCurrency(stats.revenue / stats.total)} icon="ri-bar-chart-2-line" />
       </SimpleGrid>
 

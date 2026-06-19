@@ -410,7 +410,7 @@ interface CatalogProduct {
 }
 
 const VENDOR_CATALOG: CatalogProduct[] = [
-  { id: 'PRD-001', name: 'Acme Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', msrp: 19.99, cost: 9.99 },
+  { id: 'PRD-001', name: 'AC Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', msrp: 19.99, cost: 9.99 },
   { id: 'PRD-002', name: 'Bitflow Data Stream', icon: 'ri-flow-chart', iconColor: 'violet', msrp: 49.00, cost: 29.00 },
   { id: 'PRD-003', name: 'EdgePoint Analytics', icon: 'ri-line-chart-line', iconColor: 'cyan', msrp: 79.00, cost: 49.00 },
   { id: 'PRD-004', name: 'Skybridge API Gateway', icon: 'ri-git-branch-line', iconColor: 'grape', msrp: 89.00, cost: 59.00 },
@@ -490,7 +490,7 @@ function OfferTable({ offerValues, onOfferChange, submitted }: OfferTableProps) 
                 <MantineMenu position="bottom-end" withinPortal>
                   <MantineMenu.Target>
                     <ActionIcon variant="link" size="sm">
-                      <i className="ri-more-2-fill" style={{ fontSize: 16, color: 'var(--mantine-color-gray-6)' }} />
+                      <i className="ri-more-2-fill" style={{ fontSize: 16, color: 'var(--ad-color-text-dimmed)' }} />
                     </ActionIcon>
                   </MantineMenu.Target>
                   <MantineMenu.Dropdown>
@@ -738,7 +738,7 @@ function FilterChipGroup({ label, options, value, onChange }: FilterChipGroupPro
                 fontSize: 12,
                 fontWeight: active ? 600 : 500,
                 fontFamily: 'inherit',
-                color: active ? '#326FDE' : 'var(--mantine-color-gray-7)',
+                color: active ? 'var(--ad-color-brand-primary)' : 'var(--ad-color-text-dimmed)',
                 background: active ? 'rgba(50,111,222,0.08)' : 'var(--mantine-color-gray-0)',
                 border: `1px solid ${active ? 'rgba(50,111,222,0.4)' : 'var(--mantine-color-gray-3)'}`,
                 borderRadius: 4,

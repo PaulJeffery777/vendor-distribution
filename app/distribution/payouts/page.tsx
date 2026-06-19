@@ -106,7 +106,7 @@ const PRODUCTS: Product[] = [
 ];
 
 const STATUS_PILL_COLORS: Record<StatementStatus, { fg: string; border: string }> = {
-  accruing:  { fg: '#868e96', border: '#ced4da' },
+  accruing:  { fg: 'var(--ad-color-text-dimmed)', border: 'var(--ad-color-border-default)' },
   ready:     { fg: '#1971c2', border: '#74c0fc' },
   submitted: { fg: '#b28600', border: '#ffd43b' },
   paid:      { fg: '#2f9e44', border: '#8ce99a' },
@@ -300,7 +300,7 @@ function FilterKPICard({ label, icon, tone, amount, count, countLabel, active, h
     primary: { fg: '#326FDE', bg: 'rgba(50,111,222,0.1)' },
     pending: { fg: '#f59f00', bg: 'rgba(250,176,5,0.12)' },
     success: { fg: '#2f9e44', bg: 'rgba(64,192,87,0.12)' },
-    neutral: { fg: 'var(--mantine-color-gray-7)', bg: 'var(--mantine-color-gray-1)' },
+    neutral: { fg: 'var(--ad-color-text-dimmed)', bg: 'var(--ad-color-bg-subtle)' },
   };
   const t = tones[tone];
 
@@ -563,7 +563,7 @@ interface TimelineEvent {
 
 function StatementTimeline({ statement }: { statement: Statement }) {
   const events: TimelineEvent[] = [
-    { icon: 'ri-flag-line', color: '#868e96', date: statement.period.end, label: 'Statement period closed' },
+    { icon: 'ri-flag-line', color: 'var(--ad-color-text-dimmed)', date: statement.period.end, label: 'Statement period closed' },
   ];
   if (statement.submittedDate) {
     events.push({ icon: 'ri-file-upload-line', color: '#fab005', date: statement.submittedDate, label: `Invoice ${statement.invoice} submitted to AppDirect` });
@@ -712,7 +712,7 @@ function StatementDetailContent({ statement, onCreateInvoice }: StatementDetailC
     borderRadius: 3,
     cursor: 'pointer',
     fontSize: 13,
-    color: active ? 'var(--mantine-color-gray-9)' : 'var(--mantine-color-gray-7)',
+    color: active ? 'var(--ad-color-text-default)' : 'var(--ad-color-text-dimmed)',
     fontWeight: active ? 600 : 500,
     fontFamily: 'inherit',
     boxShadow: active ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',
@@ -831,9 +831,9 @@ function StatementDetailContent({ statement, onCreateInvoice }: StatementDetailC
                       <Box
                         style={{
                           width: 26, height: 26, borderRadius: 4,
-                          background: 'var(--mantine-color-gray-1)',
+                          background: 'var(--ad-color-bg-subtle)',
                           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                          fontSize: 11, fontWeight: 700, color: 'var(--mantine-color-gray-7)',
+                          fontSize: 11, fontWeight: 700, color: 'var(--ad-color-text-dimmed)',
                           flexShrink: 0,
                         }}
                       >
@@ -1001,7 +1001,7 @@ function CreateInvoiceModal({ statement, onClose, onSubmit }: CreateInvoiceModal
 
           <Inline justify="space-between" align="center">
             <Inline gap="xs" align="center">
-              <i className="ri-shield-check-line" style={{ fontSize: 14, color: 'var(--mantine-color-gray-6)' }} />
+              <i className="ri-shield-check-line" style={{ fontSize: 14, color: 'var(--ad-color-text-dimmed)' }} />
               <Text size="xs" c="dimmed">Submitting confirms the amounts above are correct</Text>
             </Inline>
             <Inline gap="xs">
@@ -1318,7 +1318,7 @@ export default function PayoutsPage() {
                     borderRadius: 3,
                     cursor: 'pointer',
                     fontSize: 13,
-                    color: active ? (val === 'disputed' ? '#e03131' : 'var(--mantine-color-gray-9)') : 'var(--mantine-color-gray-7)',
+                    color: active ? (val === 'disputed' ? 'var(--ad-color-status-error)' : 'var(--ad-color-text-default)') : 'var(--ad-color-text-dimmed)',
                     fontWeight: active ? 600 : 500,
                     fontFamily: 'inherit',
                     boxShadow: active ? '0 1px 2px rgba(0,0,0,0.06)' : 'none',

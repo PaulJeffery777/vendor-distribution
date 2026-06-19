@@ -33,11 +33,11 @@ interface Listing {
 // ============================= MOCK DATA =============================
 
 const LISTINGS: Listing[] = [
-  { id: '1', productId: 'PRD-001', productName: 'Acme Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', salesChannel: 'AppDirect', startingPrice: 9.99, status: 'Active' },
+  { id: '1', productId: 'PRD-001', productName: 'AC Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', salesChannel: 'AppDirect', startingPrice: 9.99, status: 'Active' },
   { id: '2', productId: 'PRD-002', productName: 'Bitflow Data Stream', icon: 'ri-flow-chart', iconColor: 'violet', salesChannel: 'Apex Cloud Store', startingPrice: 29.00, status: 'Active' },
   { id: '3', productId: 'PRD-003', productName: 'Cloudspark Secure Connect', icon: 'ri-shield-check-line', iconColor: 'teal', salesChannel: 'Horizon Cloud Market', startingPrice: 15.00, status: 'Active' },
   { id: '4', productId: 'PRD-004', productName: 'DataVault Backup Pro', icon: 'ri-database-2-line', iconColor: 'orange', salesChannel: 'Meridian Commerce', startingPrice: 19.99, status: 'Inactive' },
-  { id: '5', productId: 'PRD-005', productName: 'Acme Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', salesChannel: 'Horizon Cloud Market', startingPrice: 10.99, status: 'Active' },
+  { id: '5', productId: 'PRD-005', productName: 'AC Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', salesChannel: 'Horizon Cloud Market', startingPrice: 10.99, status: 'Active' },
   { id: '6', productId: 'PRD-006', productName: 'EdgePoint Analytics', icon: 'ri-line-chart-line', iconColor: 'cyan', salesChannel: 'AppDirect', startingPrice: 49.00, status: 'Active' },
   { id: '7', productId: 'PRD-007', productName: 'FormStack Builder', icon: 'ri-layout-grid-line', iconColor: 'pink', salesChannel: 'Apex Cloud Store', startingPrice: 12.00, status: 'Inactive' },
   { id: '8', productId: 'PRD-008', productName: 'GreenLog Compliance', icon: 'ri-file-shield-2-line', iconColor: 'green', salesChannel: 'Meridian Commerce', startingPrice: 39.99, status: 'Active' },
@@ -50,7 +50,7 @@ const LISTINGS: Listing[] = [
   { id: '15', productId: 'PRD-015', productName: 'Skybridge API Gateway', icon: 'ri-git-branch-line', iconColor: 'grape', salesChannel: 'Horizon Cloud Market', startingPrice: 59.00, status: 'Active' },
   { id: '16', productId: 'PRD-016', productName: 'EdgePoint Analytics', icon: 'ri-line-chart-line', iconColor: 'cyan', salesChannel: 'Meridian Commerce', startingPrice: 45.00, status: 'Active' },
   { id: '17', productId: 'PRD-017', productName: 'HiveSync Collaboration', icon: 'ri-team-line', iconColor: 'yellow', salesChannel: 'Horizon Cloud Market', startingPrice: 9.00, status: 'Inactive' },
-  { id: '18', productId: 'PRD-018', productName: 'Acme Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', salesChannel: 'Vertex Cloud Exchange', startingPrice: 11.99, status: 'Active' },
+  { id: '18', productId: 'PRD-018', productName: 'AC Cloud Storage', icon: 'ri-cloud-line', iconColor: 'blue', salesChannel: 'Vertex Cloud Exchange', startingPrice: 11.99, status: 'Active' },
   { id: '19', productId: 'PRD-019', productName: 'Skybridge API Gateway', icon: 'ri-git-branch-line', iconColor: 'grape', salesChannel: 'Nimbus CRM Exchange', startingPrice: 55.00, status: 'Active' },
   { id: '20', productId: 'PRD-020', productName: 'GreenLog Compliance', icon: 'ri-file-shield-2-line', iconColor: 'green', salesChannel: 'Presto Growth Hub', startingPrice: 34.99, status: 'Active' },
   { id: '21', productId: 'PRD-021', productName: 'NetPulse Monitor', icon: 'ri-pulse-line', iconColor: 'indigo', salesChannel: 'Stratosphere Marketplace', startingPrice: 27.00, status: 'Active' },
@@ -278,13 +278,6 @@ function ListingsPage() {
               {selected.size} listing{selected.size === 1 ? '' : 's'} selected
             </Text>
             <Inline gap="xs">
-              <Button
-                variant="default"
-                size="xs"
-                leftSection={<i className="ri-forbid-line" style={{ fontSize: 14 }} />}
-              >
-                Deactivate
-              </Button>
               <Button
                 variant="default"
                 size="xs"

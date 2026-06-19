@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
 
 export default function HomePage() {
   return (
-    <AppShellLayout navItems={navItems} title="Vendor Portal">
+    <AppShellLayout navItems={navItems} title="Marketplace">
       <img src="/assets/Developer_Dashboard.png" alt="Developer Dashboard" />
     </AppShellLayout>
   );

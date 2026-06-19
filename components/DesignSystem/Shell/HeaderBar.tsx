@@ -30,7 +30,7 @@ interface AppSwitcherSection {
 const APP_SWITCHER_SECTIONS: AppSwitcherSection[] = [
   {
     items: [
-      { label: 'Vendor Portal', description: 'Create products', icon: 'ri-code-s-slash-line', href: '/' },
+      { label: 'Marketplace', description: 'Create products', icon: 'ri-code-s-slash-line', href: '/' },
       { label: 'Team', description: 'Govern users and roles', icon: 'ri-team-line' },
     ],
   },

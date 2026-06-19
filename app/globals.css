@@ -65,6 +65,17 @@ a {
 }
 
 /* =================================================================
+   APPDIRECT TOKEN ALIASES
+   Map Mantine semantic vars to AppDirect design tokens so that Mantine
+   system props (c="dimmed", etc.) resolve through the AD token system.
+   ================================================================= */
+
+:root[data-mantine-color-scheme='light'],
+:root[data-mantine-color-scheme='dark'] {
+  --mantine-color-dimmed: var(--ad-color-text-dimmed);
+}
+
+/* =================================================================
    DESIGN TOKEN OVERRIDES
    These correct known issues in the @appdirect/design-tokens mantine.css
    adapter and can be removed once the upstream package is fixed.

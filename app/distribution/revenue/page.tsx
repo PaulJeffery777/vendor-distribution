@@ -122,7 +122,7 @@ export default function RevenuePage() {
         <StatCard
           amount="$45,926"
           label="Revenue this period"
-          indicator={{ color: '#adb5bd', text: 'Not Invoiced' }}
+          indicator={{ color: 'var(--ad-color-text-dimmed)', text: 'Not Invoiced' }}
           action={
             <Button variant="link" size="xs">Create Invoice</Button>
           }
@@ -257,7 +257,7 @@ export default function RevenuePage() {
                     </ThemeIcon>
                     <Stack gap={0}>
                       <Text fw={700} style={{ fontSize: 16 }}>{p.name}</Text>
-                      <Text size="xs" c="dimmed" style={{ fontSize: 12, color: '#495057' }}>
+                      <Text size="xs" c="dimmed" style={{ fontSize: 12 }}>
                         {p.productId} / {p.stagingId}
                       </Text>
                     </Stack>
