@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import {
   AppShellLayout,
   type NavItem,
@@ -54,7 +55,7 @@ const navItems: NavItem[] = [
 export default function HomePage() {
   return (
     <AppShellLayout navItems={navItems} title="Marketplace">
-      <img src="/assets/Developer_Dashboard.png" alt="Developer Dashboard" />
+      <Image src="/assets/Developer_Dashboard.png" alt="Developer Dashboard" width={1440} height={900} style={{ width: '100%', height: 'auto' }} />
     </AppShellLayout>
   );
 }
