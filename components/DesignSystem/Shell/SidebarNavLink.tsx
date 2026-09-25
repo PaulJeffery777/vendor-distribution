@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink as MantineNavLink, Text, ThemeIcon } from '@mantine/core';
 
+const activeLabel = { fontWeight: 700 };
+
 const level01Styles = {
   root: {
     height: 44,
@@ -80,7 +82,7 @@ export function SidebarNavLink({
             label={child.label}
             active={child.active}
             aria-current={child.active ? 'page' : undefined}
-            styles={sectionChildStyles}
+            styles={child.active ? { ...sectionChildStyles, label: activeLabel } : sectionChildStyles}
           />
         ))}
       </>
@@ -110,7 +112,7 @@ export function SidebarNavLink({
             label={child.label}
             active={child.active}
             aria-current={child.active ? 'page' : undefined}
-            styles={level02Styles}
+            styles={child.active ? { ...level02Styles, label: activeLabel } : level02Styles}
           />
         ))}
       </MantineNavLink>
@@ -126,7 +128,7 @@ export function SidebarNavLink({
       rightSection={rightSection}
       active={active}
       aria-current={active ? 'page' : undefined}
-      styles={level01Styles}
+      styles={active ? { ...level01Styles, label: activeLabel } : level01Styles}
     />
   );
 }
