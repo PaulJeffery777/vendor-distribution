@@ -37,5 +37,8 @@ export type { DSListProps } from './List';
 export { Table } from './Table';
 export type { DSTableProps } from './Table';
 
+export { StatusGem } from './StatusGem';
+export type { DSStatusGemProps, StatusGemTone } from './StatusGem';
+
 // Future data display component exports will go here:
 // export { ADDSKbd } from './Kbd'; 

@@ -17,7 +17,7 @@
 // Import components for category exports
 import { TextInput, TextArea, NumberInput, ColorInput, Slider, Switch, SegmentedControl, Checkbox, Radio, RadioGroup, DropZone, FileInput } from './Inputs';
 import { Button, ActionIcon, CloseButton } from './Buttons';
-import { Alert, Avatar, Badge, Card, CardSection, Chip, Pill, Indicator, Progress, ThemeIcon, List, Table } from './DataDisplay';
+import { Alert, Avatar, Badge, Card, CardSection, Chip, Pill, Indicator, Progress, ThemeIcon, List, Table, StatusGem } from './DataDisplay';
 import { SearchableSelect, AutocompleteClearable, Multiselect, Select, Combobox } from './Combobox';
 import { Breadcrumb, BackBreadcrumb, NavLink, Stepper, Tabs } from './Navigation';
 import { Drawer, Menu, Modal, ConfirmationModal, Popover, ConfirmationPopover, Tooltip } from './Overlays';
@@ -53,8 +53,8 @@ export { Drawer, Menu, Modal, ConfirmationModal, Popover, ConfirmationPopover, T
 export type { DSDrawerProps, DSMenuProps, MenuItem, MenuSection, DSModalProps, ConfirmationModalProps, DSPopoverProps, PopoverAction, ConfirmationPopoverProps, DSTooltipProps } from './Overlays';
 
 // ========================== DATA DISPLAY ==========================
-export { Alert, Avatar, Badge, Card, CardSection, Chip, Pill, Indicator, Progress, ThemeIcon, List, Table } from './DataDisplay';
-export type { DSAlertProps, DSAvatarProps, AvatarVariant, AvatarSize, DSBadgeProps, DSCardProps, DSCardSectionProps, DSChipProps, DSPillProps, DSIndicatorProps, DSProgressProps, DSThemeIconProps, ThemeIconSize, ThemeIconColor, DSListProps, DSTableProps } from './DataDisplay';
+export { Alert, Avatar, Badge, Card, CardSection, Chip, Pill, Indicator, Progress, ThemeIcon, List, Table, StatusGem } from './DataDisplay';
+export type { DSAlertProps, DSAvatarProps, AvatarVariant, AvatarSize, DSBadgeProps, DSCardProps, DSCardSectionProps, DSChipProps, DSPillProps, DSIndicatorProps, DSProgressProps, DSThemeIconProps, ThemeIconSize, ThemeIconColor, DSListProps, DSTableProps, DSStatusGemProps, StatusGemTone } from './DataDisplay';
 
 // ========================== TYPOGRAPHY ==========================
 export { Kbd, Code, Text, Title } from './Typography';
@@ -160,6 +160,7 @@ export const DataDisplay = {
   ThemeIcon,
   List,
   Table,
+  StatusGem,
 };
 
 export const Typography = {

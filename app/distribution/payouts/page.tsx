@@ -3,7 +3,8 @@
 import { useState, useMemo } from 'react';
 import { DatePickerInput } from '@mantine/dates';
 import {
-  Badge,
+  StatusGem,
+  type StatusGemTone,
   Button,
   ActionIcon,
   Drawer,
@@ -69,11 +70,9 @@ interface DateRange {
   label?: string;
 }
 
-type BadgeColor = 'info' | 'success' | 'danger' | 'pending' | 'default';
-
 interface StatusConfig {
   label: string;
-  badge: BadgeColor;
+  tone: StatusGemTone;
   desc: string;
 }
 
@@ -105,20 +104,13 @@ const PRODUCTS: Product[] = [
   { id: 'p_addon',name: 'Attribution Add-on',   sku: 'NB-ATTR', unitPrice: 29 },
 ];
 
-const STATUS_PILL_COLORS: Record<StatementStatus, { fg: string; border: string }> = {
-  accruing:  { fg: 'var(--ad-color-text-dimmed)', border: 'var(--ad-color-border-default)' },
-  ready:     { fg: '#1971c2', border: '#74c0fc' },
-  submitted: { fg: '#b28600', border: '#ffd43b' },
-  paid:      { fg: '#2f9e44', border: '#8ce99a' },
-  disputed:  { fg: '#c92a2a', border: '#ffa8a8' },
-};
 
 const STATUS_CONFIG: Record<StatementStatus, StatusConfig> = {
-  accruing:  { label: 'Accruing',   badge: 'default',  desc: 'Period in progress' },
-  ready:     { label: 'Ready',      badge: 'info',     desc: 'Statement finalized, awaiting your invoice' },
-  submitted: { label: 'Submitted',  badge: 'pending',  desc: 'Awaiting AppDirect payment' },
-  paid:      { label: 'Paid',       badge: 'success',  desc: 'Funds disbursed' },
-  disputed:  { label: 'Disputed',   badge: 'danger',   desc: 'Action required' },
+  accruing:  { label: 'Accruing',          tone: 'neutral',  desc: 'Period in progress' },
+  ready:     { label: 'Ready to invoice',  tone: 'info',     desc: 'Statement finalized, awaiting your invoice' },
+  submitted: { label: 'Invoice submitted', tone: 'pending',  desc: 'Awaiting AppDirect payment' },
+  paid:      { label: 'Paid',              tone: 'success',  desc: 'Funds disbursed' },
+  disputed:  { label: 'Disputed',          tone: 'danger',   desc: 'Action required' },
 };
 
 const DATE_PRESETS = [
@@ -460,20 +452,7 @@ function StatementRow({ stmt, onOpen, onInvoice }: StatementRowProps) {
         <Text ff="monospace" fw={600} size="sm">{fmtUSD(stmt.net)}</Text>
       </Table.Td>
       <Table.Td style={{ whiteSpace: 'nowrap' }}>
-        {/* Inline pill: avoids Mantine Badge's overflow:hidden truncation in table cells */}
-        <span style={{
-          display: 'inline-block',
-          padding: '3px 8px',
-          borderRadius: 20,
-          border: `1px solid ${STATUS_PILL_COLORS[stmt.status].border}`,
-          color: STATUS_PILL_COLORS[stmt.status].fg,
-          fontSize: 12,
-          fontWeight: 600,
-          whiteSpace: 'nowrap',
-          letterSpacing: '0.01em',
-        }}>
-          {cfg.label}
-        </span>
+        <StatusGem tone={cfg.tone}>{cfg.label}</StatusGem>
       </Table.Td>
       <Table.Td style={{ whiteSpace: 'nowrap' }}>
         <Text size="sm" c={stmt.submittedDate ? 'dark' : 'dimmed'}>
@@ -1158,9 +1137,9 @@ export default function PayoutsPage() {
         Statement · {fmtDate(activeStmt.period.start, { month: 'long', year: 'numeric' })}
       </Title>
       <Inline gap="xs" mt={4} align="center">
-        <Badge color={STATUS_CONFIG[activeStmt.status].badge}>
+        <StatusGem tone={STATUS_CONFIG[activeStmt.status].tone}>
           {STATUS_CONFIG[activeStmt.status].label}
-        </Badge>
+        </StatusGem>
         <Text size="xs" c="dimmed">{STATUS_CONFIG[activeStmt.status].desc}</Text>
       </Inline>
     </Box>
