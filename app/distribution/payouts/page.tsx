@@ -6,7 +6,6 @@ import {
   StatusGem,
   type StatusGemTone,
   Button,
-  ActionIcon,
   Drawer,
   Modal,
   Stack,
@@ -466,16 +465,8 @@ function StatementRow({ stmt, onOpen, onInvoice }: StatementRowProps) {
           <Text size="sm" c="dimmed">—</Text>
         )}
       </Table.Td>
-      {/* Action — icon for "view", text only for primary CTA */}
-      <Table.Td
-        style={{ textAlign: 'right', whiteSpace: 'nowrap' }}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <Table.Td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, flexWrap: 'nowrap' }}>
-          {/* Eye icon opens drawer (same as row click, but explicit affordance) */}
-          <ActionIcon variant="link" size="sm" onClick={onOpen} title="View statement">
-            <i className="ri-eye-line" style={{ fontSize: 14 }} />
-          </ActionIcon>
           {stmt.status === 'ready' && (
             <Button variant="primary" size="xs" onClick={(e) => { e.stopPropagation(); onInvoice(); }}>
               Create invoice
