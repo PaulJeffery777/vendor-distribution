@@ -536,17 +536,16 @@ function SummaryCell({ label, value, sub, highlight, last }: SummaryCellProps) {
       <Text size="xs" fw={600} tt="uppercase" c="dimmed" mb={6} style={{ letterSpacing: '0.06em' }}>
         {label}
       </Text>
-      <Text
-        fw={700}
+      <Title
+        order={3}
         ff={typeof value === 'string' && value.includes('$') ? 'monospace' : undefined}
         style={{
-          fontSize: 22,
           color: highlight ? '#326FDE' : 'var(--mantine-color-gray-9)',
           lineHeight: 1.2,
         }}
       >
         {value}
-      </Text>
+      </Title>
       <Text size="xs" c="dimmed" mt={2}>{sub}</Text>
     </Box>
   );
