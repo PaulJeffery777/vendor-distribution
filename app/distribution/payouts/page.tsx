@@ -18,7 +18,6 @@ import {
   TextInput,
   Select,
   Table,
-  Breadcrumb,
   Divider,
 } from '@/components/DesignSystem';
 
@@ -1141,7 +1140,6 @@ export default function PayoutsPage() {
       {/* Page header */}
       <Inline align="flex-end" gap="md" style={{ flexWrap: 'wrap' }}>
         <Stack gap="xs" style={{ flex: '1 1 260px', minWidth: 260 }}>
-          <Breadcrumb items={[{ label: 'Finance', href: '#' }, { label: 'Payouts' }]} />
           <Title order={2} style={{ letterSpacing: '-0.01em' }}>Payouts</Title>
           <Text size="sm" c="dimmed">Track revenue from AppDirect Network and submit invoices for disbursement.</Text>
         </Stack>
