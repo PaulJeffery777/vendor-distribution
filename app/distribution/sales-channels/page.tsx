@@ -303,22 +303,6 @@ const SALES_CHANNEL_OPTIONS = ['All', ...Array.from(new Set(CHANNELS.map((c) => 
 
 // ============================= HELPERS =============================
 
-function renderStars(rating: number) {
-  const full = Math.floor(rating);
-  const half = rating - full >= 0.5;
-  const stars: React.ReactNode[] = [];
-  for (let i = 0; i < full; i++) {
-    stars.push(<i key={`f${i}`} className="ri-star-fill" style={{ color: '#fab005', fontSize: 13 }} />);
-  }
-  if (half) {
-    stars.push(<i key="h" className="ri-star-half-fill" style={{ color: '#fab005', fontSize: 13 }} />);
-  }
-  const remaining = 5 - full - (half ? 1 : 0);
-  for (let i = 0; i < remaining; i++) {
-    stars.push(<i key={`e${i}`} className="ri-star-line" style={{ color: 'var(--mantine-color-gray-3)', fontSize: 13 }} />);
-  }
-  return stars;
-}
 
 const categoryColors: Record<string, string> = {
   Productivity: 'blue',
@@ -381,15 +365,9 @@ function ChannelCard({ channel, onViewDetails }: ChannelCardProps) {
         {channel.description}
       </Text>
 
-      <Inline gap="md" align="center">
-        <Inline gap={2} align="center">
-          {renderStars(channel.rating)}
-          <Text size="xs" fw={600} ml={4}>{channel.rating}</Text>
-        </Inline>
-        <Text size="xs" c="dimmed">
-          {channel.vendorCount.toLocaleString()} vendors
-        </Text>
-      </Inline>
+      <Text size="xs" c="dimmed">
+        {channel.vendorCount.toLocaleString()} vendors
+      </Text>
 
       <Button variant="default" size="xs" onClick={onViewDetails} fullWidth>
         View Details
@@ -586,13 +564,9 @@ function ChannelDetailDrawer({ channel, onClose }: ChannelDetailDrawerProps) {
       }}
     >
       <Stack gap="md">
-        <Inline gap={2} align="center">
-          {renderStars(channel.rating)}
-          <Text size="sm" fw={600} ml={4}>{channel.rating}</Text>
-          <Text size="sm" c="dimmed" ml="xs">
-            {channel.vendorCount.toLocaleString()} vendors
-          </Text>
-        </Inline>
+        <Text size="sm" c="dimmed">
+          {channel.vendorCount.toLocaleString()} vendors
+        </Text>
 
         <Divider />
 
